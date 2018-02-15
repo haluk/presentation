@@ -5,10 +5,12 @@
   \usetheme{CambridgeUS}
   \usecolortheme{orchid}
   \setbeamercovered{transparent}
-  \setbeamertemplate{blocks}[rounded][shadow=true]
-  \setbeamertemplate{navigation symbols}{}
   \useinnertheme{rectangles}
-  \setbeamercolor{title}{bg=alerted text.fg!75!black, fg=white}
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamercolor{title}{bg=alerted text.fg!85!black, fg=white}
+  \setbeamercolor{item projected}{bg=alerted text.fg!85!black}
+  \setbeamertemplate{enumerate items}[default]
+  \setbeamercolor{local structure}{fg=alerted text.fg!85!black}
 }
 
 \usepackage[english]{babel}
@@ -16,9 +18,12 @@
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 
-\usepackage{url, hyperref}
-\definecolor{links}{HTML}{3366cc}
-\hypersetup{colorlinks,linkcolor=,urlcolor=links}
+\definecolor{hdblue}{HTML}{3366cc}
+\hypersetup{colorlinks,linkcolor=,urlcolor=hdblue, citecolor=hdblue}
+
+\usepackage{outlines}
+
+\usepackage{natbib}
 
 \title[Presentation]{Presentation Title}
 
@@ -68,13 +73,7 @@
 
 \section{Introduction}
 \begin{frame}{Introduction}
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-  eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-  enim ad minim veniam, quis nostrud exercitation ullamco laboris
-  nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-  reprehenderit in voluptate velit esse cillum dolore eu fugiat
-  nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-  sunt in culpa qui officia deserunt mollit anim id est laborum.
+  Can machines think? \citep{turin1950imitation}
 \end{frame}
 
 \begin{frame}{Blocks}
@@ -90,15 +89,20 @@
 \end{frame}
 
 \begin{frame}{Items}
-  \begin{itemize}
-  \item Item 1
-  \item Item 2
-  \end{itemize}
+  \begin{outline}[enumerate]
+    \1 Top level enum
+    \2 Sub enum
+    \3 Sub sub enum
+    \1 Another top level enum
+  \end{outline}
 
-  \begin{enumerate}
-  \item Enum 1
-  \item Enum 2
-  \end{enumerate}
+  \begin{outline}[itemize]
+    \1 Top level item
+    \2 Sub item
+    \3 Sub sub item
+    \1 Another top level item
+  \end{outline}
+
 \end{frame}
 
 \begin{frame}{Outline}
@@ -110,5 +114,10 @@
   \begin{center}
     \Huge{Questions?}
   \end{center}
+\end{frame}
+\begin{frame}[allowframebreaks]
+        \frametitle{References}
+        \bibliographystyle{chicago}
+        \bibliography{presentation}
 \end{frame}
 \end{document}
