@@ -7,6 +7,7 @@
   \setbeamercovered{transparent}
   \useinnertheme{rectangles}
   \setbeamertemplate{navigation symbols}{}
+  \usefonttheme[onlymath]{serif}
   \setbeamercolor{title}{bg=alerted text.fg!85!black, fg=white}
   \setbeamercolor{item projected}{bg=alerted text.fg!85!black}
   \setbeamertemplate{enumerate items}[default]
@@ -17,13 +18,20 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
+\usepackage{pifont}
+
 
 \definecolor{hdblue}{HTML}{3366cc}
 \hypersetup{colorlinks,linkcolor=,urlcolor=hdblue, citecolor=hdblue}
 
+\usepackage{amsmath}
 \usepackage{outlines}
-
+\usepackage{caption}
 \usepackage{natbib}
+
+\newcommand{\xmark}{\ding{55}}
+\newcommand{\highlight}[1]{%
+  \colorbox{red!50}{$\displaystyle#1$}}
 
 \title[Presentation]{Presentation Title}
 
@@ -68,7 +76,8 @@
 
 \begin{document}
 
-\begin{frame}\titlepage
+\begin{frame}
+  \titlepage
 \end{frame}
 
 \section{Introduction}
