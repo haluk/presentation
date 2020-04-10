@@ -20,6 +20,17 @@
 \usepackage{lmodern}
 \usepackage{pifont}
 
+\newcounter{cont}
+
+\makeatletter
+%allowframebreaks numbering in the title
+\setbeamertemplate{frametitle continuation}{%
+    \setcounter{cont}{\beamer@endpageofframe}%
+    \addtocounter{cont}{1}%
+    \addtocounter{cont}{-\beamer@startpageofframe}%
+    (\insertcontinuationcount/\arabic{cont})%
+}
+\makeatother
 
 \definecolor{hdblue}{HTML}{3366cc}
 \hypersetup{colorlinks,linkcolor=,urlcolor=hdblue, citecolor=hdblue}
@@ -116,6 +127,17 @@
 
 \begin{frame}{Outline}
   \tableofcontents
+\end{frame}
+
+\begin{frame}[allowframebreaks]{allowframebreaks title}
+    frame 1
+    \framebreak
+
+    frame 2
+    \framebreak
+
+    frame 3
+    \framebreak
 \end{frame}
 
 \section{Conclusion}
